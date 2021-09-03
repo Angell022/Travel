@@ -2,7 +2,7 @@
 
 :root {
   --header-height: 3rem;
-  --hue-color: 345;
+  --hue-color: 358;
 
   --first-color: hsl(var(--hue-color), 64%, 22%);
   --first-color-second: hsl(var(--hue-color), 64%, 22%);
@@ -457,7 +457,7 @@ input {
   height: 230px;
 }
 .place__container {
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(auto-fit, max-content);
   justify-content: center;
 }
 .place__card {
@@ -623,10 +623,6 @@ input {
 
 /*=============== MEDIA QUERIES ===============*/
 @media screen and (max-width: 340px) {
-  .place__container {
-    grid-template-columns: max-content;
-    justify-content: center;
-  }
   .experience__content {
     padding: 0;
   }
@@ -653,7 +649,10 @@ input {
     justify-content: center;
   }
   .place__container {
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  justify-items: center;
+  padding: 0 2rem;
   }
 }
 
